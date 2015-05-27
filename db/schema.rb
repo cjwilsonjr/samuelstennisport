@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527123942) do
+ActiveRecord::Schema.define(version: 20150527133304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,16 +31,16 @@ ActiveRecord::Schema.define(version: 20150527123942) do
     t.text     "notes"
     t.date     "model_year"
     t.datetime "last_string_change"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
-  create_table "strings", force: :cascade do |t|
+  create_table "stringsets", force: :cascade do |t|
     t.integer  "racket_id"
     t.string   "brand"
     t.integer  "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 20150527123942) do
     t.string   "last_name",     null: false
     t.string   "email",         null: false
     t.string   "password_hash", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end

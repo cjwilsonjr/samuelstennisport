@@ -1,5 +1,4 @@
 class Racket < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :customer
+  belongs_to :owner, class_name: "Customer"
   has_many :strings
 end
