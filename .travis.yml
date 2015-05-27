@@ -3,4 +3,4 @@ language: ruby
 rvm:
   - 2.2.0
 before_script:
-  - psql -c 'create database samuelstennisport_test;' -U postgres
+  - psql -c 'create database samuels_tennisport_test;' -U postgres
