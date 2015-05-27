@@ -1,4 +1,4 @@
-class Racket < ActiveRecord:Base
+class Racket < ActiveRecord::Base
   belongs_to :user
   belongs_to :customer
   has_many :strings
