@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :rackets
   resources :stringsets
 
+  get "*path", to: redirect("/")
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

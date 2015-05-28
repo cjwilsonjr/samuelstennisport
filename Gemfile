@@ -26,6 +26,7 @@ gem 'bootstrap-sass'
 gem 'rake'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'haml'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
