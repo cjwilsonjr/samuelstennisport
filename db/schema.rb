@@ -44,13 +44,13 @@ ActiveRecord::Schema.define(version: 20150527133304) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name",                    null: false
-    t.string   "last_name",                     null: false
-    t.string   "email",                         null: false
-    t.string   "password_hash",                 null: false
-    t.boolean  "admin",         default: false, null: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.string   "first_name",                      null: false
+    t.string   "last_name",                       null: false
+    t.string   "email",                           null: false
+    t.string   "password_digest",                 null: false
+    t.boolean  "admin",           default: false, null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end
