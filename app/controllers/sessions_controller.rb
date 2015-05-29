@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
-  skip_before_action :require_login, only: [:create]
+  skip_before_action :require_login, only: [:new, :create]
+
+  def new
+  end
 
   def create
     user = User.find_by_email(params[:session][:email])
@@ -9,7 +12,7 @@ class SessionsController < ApplicationController
       log_in(user)
       redirect_to root_path
     else
-      flash.now[:danger] = "Invalid email/password"
+      flash[:danger] = "Invalid email/password"
       render "new"
     end
   end
