@@ -1,8 +1,33 @@
-%h1 Hello!
+.site-wrapper
+  .site-wrapper-inner
+    .cover-container
+      .masthead.clearfix
+        .inner
+          %h3.masthead-brand
+            Cover
+          %nav
+            %ul.nav.masthead-nav
+              %li.active
+                %a Home
+              %li
+                %a Features
+              %li
+                %a Contact
+              - if current_user
+                %li= link_to "Log Out", logout_path, method: :delete
+                - if current_user.admin
+                  %li= link_to "Create Account", signup_path
+              - else
+                %li= link_to "Log In", login_path
 
-- if current_user
-  = link_to "Log Out", logout_path, method: :delete
-  - if current_user.admin
-    = link_to "Create Account", signup_path
-- else
-  = link_to "Log In", login_path
+      .inner.cover
+        %h1.cover-heading
+          Cover your page
+          %p.lead
+            Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
+          %p.lead
+            %a.btn.btn-lg.btn-default Learn more
+
+      .mastfoot
+        .inner
+          %p Samuels Tennisport #{Time.new.year} ©
