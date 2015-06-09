@@ -1,6 +1,12 @@
 .container
-  -@brands.each do |stringset|
-    = stringset.brand
+  %h2 Choose String
+  = form_for(:stringset, url: login_path) do |f|
+    = f.label :brand
+    = f.select :brand, options_for_select(@brands)
+    = f.label :description
+    = f.select :description, options_for_select(@descriptions)
+    = f.submit "Add Strings"
+  = @brands
 
   %ul
   -@stringsets.each do |stringset|

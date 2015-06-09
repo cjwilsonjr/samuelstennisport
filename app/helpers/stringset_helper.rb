@@ -1,10 +1,10 @@
 module StringsetHelper
   def find_string_brands(stringsets)
-    stringsets.uniq{ |stringset| stringset.brand }
+    stringsets.map{ |stringset| stringset.brand }.uniq
   end
 
   def find_string_descriptions(stringsets)
-    stringsets.uniq{ |stringset| set.description }
+    stringsets.map{ |stringset| stringset.description }.uniq
   end
 
 end
