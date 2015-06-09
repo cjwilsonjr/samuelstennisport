@@ -1,21 +1,21 @@
 .container
-  %h2 Choose String
+  %h2 Choose Strings
   = form_for(:stringset, url: login_path) do |f|
     = f.label :brand
     = f.select :brand, options_for_select(@brands)
     = f.label :description
     = f.select :description, options_for_select(@descriptions)
     = f.submit "Add Strings"
-  = @brands
+  / = @brands
 
-  %ul
-  -@stringsets.each do |stringset|
-    %li Brand: #{stringset.brand} Type: #{stringset.description}
+  / %ul
+  / -@stringsets.each do |stringset|
+  /   %li Brand: #{stringset.brand} Type: #{stringset.description}
 
-  %h2 Choose String
-  = form_for(:stringset, url: login_path) do |f|
-    = f.label :stringset
-    = f.select :brand, options_for_select([["Babolat", 1], ["Gamma", 2], ["Head", 3], ["Luxilon", 4], ["Prince", 5], ["Solinco", 6], ["Technifibre", 7], ["Wilson", 8]])
-    = f.label :password
-    = f.password_field :password
-    = f.submit "Log In"
+  / %h2 Choose String
+  / = form_for(:stringset, url: login_path) do |f|
+  /   = f.label :stringset
+  /   = f.select :brand, options_for_select([["Babolat", 1], ["Gamma", 2], ["Head", 3], ["Luxilon", 4], ["Prince", 5], ["Solinco", 6], ["Technifibre", 7], ["Wilson", 8]])
+  /   = f.label :password
+  /   = f.password_field :password
+  /   = f.submit "Log In"
