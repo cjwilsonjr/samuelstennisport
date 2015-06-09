@@ -38,9 +38,12 @@ ActiveRecord::Schema.define(version: 20150527133304) do
   create_table "stringsets", force: :cascade do |t|
     t.integer  "racket_id"
     t.string   "brand"
-    t.integer  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "description"
+    t.string   "game"
+    t.text     "notes"
+    t.integer  "restring_price"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|

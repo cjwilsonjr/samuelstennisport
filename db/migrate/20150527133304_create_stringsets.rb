@@ -3,7 +3,10 @@ class CreateStringsets < ActiveRecord::Migration
     create_table :stringsets do |t|
       t.integer :racket_id
       t.string :brand
-      t.integer :price
+      t.string :description
+      t.string :game
+      t.text :notes
+      t.integer :restring_price
       t.timestamps null: false
     end
   end
