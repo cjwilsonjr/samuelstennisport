@@ -7,7 +7,9 @@
     = f.select :description, options_for_select(@descriptions)
     = f.submit "Add Strings"
   / = @brands
-
+  / wperqwperqpw
+  / = @descriptions
+  = brand_specific_descriptions(@stringsets)
   / %ul
   / -@stringsets.each do |stringset|
   /   %li Brand: #{stringset.brand} Type: #{stringset.description}
