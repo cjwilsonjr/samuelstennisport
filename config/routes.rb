@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   resources :rackets
   resources :stringsets
 
+  get "stringsets/update_string_brands", :as => :update_string_brands
+  get "stringsets/update_string_descriptions", :as => :update_string_descriptions
+
   get "*path", to: redirect("/")
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

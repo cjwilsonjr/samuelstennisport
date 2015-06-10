@@ -1,6 +1,6 @@
 .container
   %h2 Choose Strings
-  = form_for(:stringset, url: login_path) do |f|
+  = form_for(:stringset) do |f|
     = f.label :brand
     = f.select :brand, options_for_select(@brands)
     = f.label :description
