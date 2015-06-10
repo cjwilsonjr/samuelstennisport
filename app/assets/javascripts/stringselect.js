@@ -1,8 +1,12 @@
 $(document).ready(function(){
 
-  $(document).on("click", "#stringset_brand", function(event){
+  $(document).on("change", "#stringset_brand", function(event){
     event.preventDefault();
-    $("body").css("background", "red");
+    var url = $("form").attr("action");
+    // $("body").css("background", "red");
+    $.ajax({
+      url: url
+    });
   });
 
 });
