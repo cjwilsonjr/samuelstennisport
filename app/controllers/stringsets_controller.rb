@@ -7,11 +7,11 @@ class StringsetsController < ApplicationController
     @descriptions = find_string_descriptions(@stringsets)
   end
 
-  def update_string_brands
-    @brands = find_string_brands(@stringsets)
-  end
+  # def update_string_brands
+  #   @brands = find_string_brands(@stringsets)
+  # end
 
-  def update_string_descriptions
+  # def update_string_descriptions
 
-  end
+  # end
 end

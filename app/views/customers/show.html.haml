@@ -1,0 +1,4 @@
+.container
+  %h2 Select #{@customer.first_name}  #{@customer.last_name}'s Racket
+  - @rackets.each do |racket|
+    = link_to racket.brand, racket_path(racket)
