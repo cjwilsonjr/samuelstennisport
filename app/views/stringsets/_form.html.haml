@@ -2,9 +2,9 @@
   = f.label :brand
   = f.select :brand, options_for_select(@brands)
   = f.label :description
-  = f.select :description, options_for_select(@stringsets.map { |stringset| stringset.description }.uniq)
+  = f.select :description, options_for_select(@descriptions)
   = f.label :game
-  = f.select :game, options_for_select(@stringsets.map { |stringset| stringset.game }.uniq)
+  = f.select :game, options_for_select(@games)
   = f.label :restring_price
-  = f.select :restring_price, options_for_select(@stringsets.map { |stringset| stringset.restring_price }.uniq)
+  = f.select :restring_price, options_for_select(@prices)
   = f.submit "Add Strings"

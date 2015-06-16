@@ -15,4 +15,11 @@ module RacketHelper
     string_descriptions.uniq
   end
 
+  def find_games(stringsets)
+    @stringsets.map { |stringset| stringset.game }.uniq
+  end
+
+  def find_string_prices(stringsets)
+    @stringsets.map { |stringset| stringset.restring_price }.uniq
+  end
 end
