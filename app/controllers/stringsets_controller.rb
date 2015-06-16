@@ -7,11 +7,15 @@ class StringsetsController < ApplicationController
     @descriptions = find_string_descriptions(@stringsets)
   end
 
-  # def update_string_brands
-  #   @brands = find_string_brands(@stringsets)
-  # end
+  def create
+    @racket = Racket.find_by_id(params[:racket_id])
+    @stringset = @racket.stringsets.create(stringset_params)
+    @stringset.update(racket_id: @racket.id)
+    redirect_to racket_path(@racket)
+  end
 
-  # def update_string_descriptions
-
-  # end
+  private
+    def stringset_params
+      params.require(:stringset).permit(:brand, :description, :game, :notes, :restring_price)
+    end
 end

@@ -11,6 +11,11 @@ class RacketsController < ApplicationController
 
   def show
     @racket = Racket.find_by(id: params[:id])
+    @stringsets = Stringset.all
+  end
+
+  def edit
+
   end
 
 end
