@@ -14,11 +14,12 @@ Rails.application.routes.draw do
   post "signup" => "users#create"
 
   resources :customers
-  resources :rackets
-  resources :stringsets
+  resources :rackets do
+    resources :stringsets
+  end
 
-  get "stringsets/update_string_brands", :as => :update_string_brands
-  get "stringsets/update_string_descriptions", :as => :update_string_descriptions
+  # get "stringsets/update_string_brands", :as => :update_string_brands
+  # get "stringsets/update_string_descriptions", :as => :update_string_descriptions
 
   get "*path", to: redirect("/")
   # Example of regular route:
