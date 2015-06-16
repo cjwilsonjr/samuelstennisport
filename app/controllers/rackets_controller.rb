@@ -1,4 +1,5 @@
 class RacketsController < ApplicationController
+  include RacketHelper
 
   def index
     @rackets = Racket.all
@@ -12,6 +13,8 @@ class RacketsController < ApplicationController
   def show
     @racket = Racket.find_by(id: params[:id])
     @stringsets = Stringset.all
+    @brands = find_string_brands(@stringsets)
+    @descriptions = find_string_descriptions(@stringsets)
   end
 
   def edit

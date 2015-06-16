@@ -1,4 +1,4 @@
-module StringsetHelper
+module RacketHelper
   def find_string_brands(stringsets)
     stringsets.map{ |stringset| stringset.brand }.uniq
   end

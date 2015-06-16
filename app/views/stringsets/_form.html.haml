@@ -1,6 +1,6 @@
 = form_for([@racket, @racket.stringsets.build]) do |f|
   = f.label :brand
-  = f.select :brand, options_for_select(@stringsets.map { |stringset| stringset.brand }.uniq)
+  = f.select :brand, options_for_select(@brands)
   = f.label :description
   = f.select :description, options_for_select(@stringsets.map { |stringset| stringset.description }.uniq)
   = f.label :game

@@ -1,5 +1,5 @@
 class StringsetsController < ApplicationController
-  include StringsetHelper
+  # include StringsetHelper
 
   def index
     @stringsets = Stringset.all
