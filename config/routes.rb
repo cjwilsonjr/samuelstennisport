@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   get "signup" => "users#new"
   post "signup" => "users#create"
 
-  resources :customers
+  resources :customers do
+    resources :rackets
+  end
   resources :rackets do
     resources :stringsets
   end

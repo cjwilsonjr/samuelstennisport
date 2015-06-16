@@ -1,6 +1,6 @@
 .container
   %h2 Add Strings
-  = render 'stringsets/form'
-  / - @racket.stringsets.each do |stringset|
-  / = link_to stringset_path(stringset)
+  = render 'stringsets/form' if @racket.stringsets.empty?
+  / = @racket.stringsets.each { |stringset|link_to racket_path(stringset) } if @racket.stringsets
 
+  = @racket.stringsets[0].brand if @racket.stringsets

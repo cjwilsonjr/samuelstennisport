@@ -1,0 +1,10 @@
+= form_for(@racket) do |f|
+  = f.label :brand
+  = f.text_field :brand
+  = f.label :notes
+  = f.text_area :notes
+  = f.label :price
+  = f.number_field :price
+  = f.label :model_year
+  = f.date_field :model_year
+  = f.submit "Add Strings"
