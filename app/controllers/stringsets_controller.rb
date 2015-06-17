@@ -12,7 +12,7 @@ class StringsetsController < ApplicationController
     @stringset = @racket.stringsets.create(stringset_params)
     @stringset.update(racket_id: @racket.id)
     @stringset.created_at
-    @racket.update(last_string_change: Time.at((@stringset.created_at))
+    @racket.update(last_string_change: Time.at((Time.now)))
     redirect_to racket_path(@racket)
   end
 
