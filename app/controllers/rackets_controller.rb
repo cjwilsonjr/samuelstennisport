@@ -41,7 +41,7 @@ class RacketsController < ApplicationController
 
     private
     def racket_params
-      params.require(:racket).permit(:brand, :price, :notes, :model_year)
+      params.require(:racket).permit(:brand, :price, :notes, :model_year, :last_string_change)
     end
 
 end
