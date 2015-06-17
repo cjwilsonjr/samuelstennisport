@@ -6,21 +6,28 @@ class RacketsController < ApplicationController
   end
 
   def new
-    # @customer = Customer.find_by(id: params[:customer_id])
+    @customer = Customer.find_by(id: params[:customer_id])
     @racket = Racket.new
   end
 
   def create
-    @customer = Customer.find_by(id: params[:id])
-    @racket = Racket.find_by(id: params[:id])
+    # @racket = Racket.find_by_id(params[:racket_id])
+    # @stringset = @racket.stringsets.create(stringset_params)
+    # @stringset.update(racket_id: @racket.id)
+    # redirect_to racket_path(@racket)
+
+    @customer = Customer.find_by_id(params[:customer_id])
+    # @racket = Racket.find_by(id: params[:id])
     # @stringset = @racket.stringsets
-    @racket = Racket.new(racket_params)
-    if @racket.save
-      @customer.rackets << @racket
-      redirect_to @racket
-    else
-      render "rackets/form"
-    end
+    @racket = @customer.rackets.create(racket_params)
+    @racket.update(owner_id: @customer.id)
+    redirect_to @racket
+    # if @racket.save
+    #   @customer.rackets << @racket
+    #   redirect_to @racket
+    # else
+    #   render "rackets/form"
+    # end
   end
 
   def show
