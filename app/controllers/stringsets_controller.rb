@@ -11,6 +11,7 @@ class StringsetsController < ApplicationController
     @racket = Racket.find_by_id(params[:racket_id])
     @stringset = @racket.stringsets.create(stringset_params)
     @stringset.update(racket_id: @racket.id)
+    @racket.update(last_string_change: @stringset.created_at)
     redirect_to racket_path(@racket)
   end
 
