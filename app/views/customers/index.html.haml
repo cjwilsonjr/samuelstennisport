@@ -1,14 +1,9 @@
 .container
-  %h2 Select Customer
-  / = form_for(:customer, url: customer_path(:customer_id)) do |f|
-  /   = f.label :last_name
-  /   = f.select :customer, options_for_select(@lastnames)
-  /   = f.label :first_name
-  /   = f.select :customer, options_for_select(@firstnames)
-  /   = f.label :email
-  /   = f.select :customer, options_for_select(@emails)
-  /   = f.submit "Select Customer"
-  - @customers.each do |customer|
-    = link_to customer.email, customer_path(customer)
+  .jumbotron
+    %h2 Select Customer
+    %ul
+      - @customers.each do |customer|
+        %li
+          = link_to customer.email, customer_path(customer)
 
-  = button_to "Add Customer", new_customer_path, method: :get
+    = button_to "Add Customer", new_customer_path, method: :get

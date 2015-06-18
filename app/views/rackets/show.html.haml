@@ -1,4 +1,5 @@
 .container
-  %h2 Add Strings
-  = render 'stringsets/form' if @racket.stringsets.empty?
-  = @racket.stringsets[0].brand if @racket.stringsets
+  .jumbotron
+    %h2 Add Strings
+    = render 'stringsets/form' if @racket.stringsets.empty?
+    = @racket.stringsets[0].brand if @racket.stringsets

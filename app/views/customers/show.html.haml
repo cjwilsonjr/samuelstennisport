@@ -1,8 +1,8 @@
 .container
-  %h2 Select #{@customer.first_name}  #{@customer.last_name}'s Racket
-  - @rackets.each do |racket|
-    = link_to racket.brand, racket_path(racket)
-    <br>
-
-  = link_to "Add Racket", new_customer_racket_path(@customer.id)
-  / = render "rackets/form"
+  .jumbotron
+    %h2 Select #{@customer.first_name}  #{@customer.last_name}'s Racket
+    %ul
+      - @rackets.each do |racket|
+        %li
+        = link_to racket.brand, racket_path(racket)
+    = link_to "Add Racket", new_customer_racket_path(@customer.id)
