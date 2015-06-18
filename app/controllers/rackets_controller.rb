@@ -8,6 +8,11 @@ class RacketsController < ApplicationController
   def new
     @customer = Customer.find_by(id: params[:customer_id])
     @racket = Racket.new
+    if request.xhr?
+      render "_form", layout: false
+    else
+      render "new"
+    end
   end
 
   def create

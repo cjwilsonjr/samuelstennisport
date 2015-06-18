@@ -5,4 +5,4 @@
       - @rackets.each do |racket|
         %li
         = link_to racket.brand, racket_path(racket)
-    = link_to "Add Racket", new_customer_racket_path(@customer.id)
+    = button_to "Add Racket", new_customer_racket_path(@customer.id), method: :get
