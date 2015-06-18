@@ -17,11 +17,12 @@ ActiveRecord::Schema.define(version: 20150527133304) do
   enable_extension "plpgsql"
 
   create_table "customers", force: :cascade do |t|
-    t.string   "first_name", null: false
-    t.string   "last_name",  null: false
+    t.string   "first_name",    null: false
+    t.string   "last_name",     null: false
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "play_per_week"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "rackets", force: :cascade do |t|
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150527133304) do
     t.text     "notes"
     t.date     "model_year"
     t.datetime "last_string_change"
+    t.datetime "next_string_change"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end

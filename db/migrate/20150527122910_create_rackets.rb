@@ -7,6 +7,7 @@ class CreateRackets < ActiveRecord::Migration
       t.text :notes
       t.date :model_year
       t.datetime :last_string_change
+      t.datetime :next_string_change
       t.timestamps null: false
     end
   end
