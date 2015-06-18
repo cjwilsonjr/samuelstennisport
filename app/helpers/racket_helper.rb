@@ -16,10 +16,19 @@ module RacketHelper
   end
 
   def find_games(stringsets)
-    @stringsets.map { |stringset| stringset.game }.uniq
+    stringsets.map { |stringset| stringset.game }.uniq
   end
 
   def find_string_prices(stringsets)
-    @stringsets.map { |stringset| stringset.restring_price }.uniq
+    stringsets.map { |stringset| stringset.restring_price }.uniq
+  end
+
+  def next_string_change_date(racket, customer)
+    if racket.last_string_change
+      change_date = racket.last_string_change + (customer.months_between_string_change).months
+      racket.update(next_string_change: change_date)
+    else
+      return false
+    end
   end
 end
