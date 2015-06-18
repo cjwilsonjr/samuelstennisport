@@ -1,5 +1,5 @@
 class StringsetsController < ApplicationController
-  # include StringsetHelper
+  include RacketHelper
 
   def index
     @stringsets = Stringset.all
@@ -11,9 +11,9 @@ class StringsetsController < ApplicationController
     @racket = Racket.find_by_id(params[:racket_id])
     @stringset = @racket.stringsets.create(stringset_params)
     @stringset.update(racket_id: @racket.id)
-    @stringset.created_at
-    @racket.update(last_string_change: Time.at((Time.now)))
-    redirect_to racket_path(@racket)
+    @racket.update(last_string_change: Time.now)
+    next_string_change_date(@racket, @customer)
+    redirect_to @racket
   end
 
   private
