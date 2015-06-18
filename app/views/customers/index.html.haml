@@ -10,3 +10,5 @@
   /   = f.submit "Select Customer"
   - @customers.each do |customer|
     = link_to customer.email, customer_path(customer)
+
+  = button_to "Add Customer", new_customer_path, method: :get
