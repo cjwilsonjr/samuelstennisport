@@ -9,10 +9,11 @@ class StringsetsController < ApplicationController
 
   def create
     @racket = Racket.find_by_id(params[:racket_id])
+    customer = @racket.owner
     @stringset = @racket.stringsets.create(stringset_params)
     @stringset.update(racket_id: @racket.id)
     @racket.update(last_string_change: Time.now)
-    next_string_change_date(@racket, @customer)
+    next_string_change_date(@racket, customer)
     redirect_to @racket
   end
 
