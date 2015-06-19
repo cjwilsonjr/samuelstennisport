@@ -4,14 +4,12 @@ $(document).ready(function(){
     var $this = $(this);
     var url = $this.attr("action");
 
-    var request = $.ajax({
+    $.ajax({
       url: url,
       method: "GET"
-    });
-
-    request.done(function(response){
+    })
+    .done(function(response){
       $this.replaceWith(response);
     });
-
   });
 });
