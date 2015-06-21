@@ -1,4 +1,21 @@
-// $(document).ready(function(){
+$(document).ready(function(){
+  $(document).on("change", "#stringset_brand", function(event){
+    event.preventDefault();
+    var url =  $(this).parent().attr("action");
+    console.log(url);
+    $.ajax({
+      method: "GET",
+      url: url,
+      data: {brand_type: $("#stringset_brand option:selected").val()}
+      })
+      .done(function(response){
+        // var r = $.parseJSON(response);
+        // console.log(r.descriptions);
+        // $("#stringset_description").empty().append(response);
+
+      });
+    });
+  });
 //   $(document).on("submit", "form", function(event){
 //     event.preventDefault();
 //     console.log($(this).serialize());
