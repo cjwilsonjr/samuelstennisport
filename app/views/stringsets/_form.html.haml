@@ -1,8 +1,8 @@
 = form_for([@racket, @racket.stringsets.build]) do |f|
   = f.label :brand
-  = f.select :brand, options_for_select(@brands)
+  = f.select :brand, options_for_select(@brands), include_blank: "Select Brand"
   = f.label :description
-  = f.select :description, options_for_select(@descriptions)
+  = f.select :description, options_for_select(@descriptions), include_blank: "Select Type"
   = f.label :game
   = f.select :game, options_for_select(@games)
   = f.label :restring_price
