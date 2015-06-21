@@ -20,7 +20,7 @@ class RacketsController < ApplicationController
     @racket = @customer.rackets.new(racket_params)
     if @racket.save
       @racket.update(owner_id: @customer.id)
-      CustomerMailer.customer_email(current_user).deliver_now
+      # CustomerMailer.customer_email(current_user).deliver_now
       redirect_to @racket
     else
       render "new"

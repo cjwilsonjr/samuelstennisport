@@ -3,7 +3,7 @@ class StringsetsController < ApplicationController
 
   def index
     @stringsets = Stringset.all
-    @brands = find_string_brands(@stringsets)
+    @brands = find_string_brands(@stringsets).sort
     @descriptions = find_string_descriptions(@stringsets)
   end
 

@@ -20,7 +20,7 @@ module RacketHelper
   end
 
   def find_string_prices(stringsets)
-    stringsets.map { |stringset| stringset.restring_price }.uniq
+    stringsets.map { |stringset| stringset.restring_price }.uniq.sort
   end
 
   def next_string_change_date(racket, customer)
