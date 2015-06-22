@@ -4,13 +4,8 @@ class StringsetsController < ApplicationController
   def index
     @stringsets = Stringset.all
     @brands = find_string_brands(@stringsets).sort
-    # @descriptions = find_string_descriptions(@stringsets)
     if request.xhr?
-      puts "HELLO"
-      puts params[:brand_type]
-      puts params[:id]
       @descriptions = find_string_descriptions(Stringset.where(brand: params[:brand_type]))
-      puts @descriptions
       render json: @descriptions
     end
   end

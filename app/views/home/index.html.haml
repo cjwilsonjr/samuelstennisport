@@ -1,33 +1,34 @@
-.site-wrapper
-  .site-wrapper-inner
-    .cover-container
-      .masthead.clearfix
-        .inner
-          %h3.masthead-brand
-            Samuels Tennisport
-          %nav
-            %ul.nav.masthead-nav
-              %li.active
-                %a Home
-              %li
-                = link_to "Customers", customers_path
-              %li
-                %a Contact
-              - if current_user
-                %li= link_to "Log Out", logout_path, method: :delete
-                - if current_user.admin
-                  %li= link_to "Create Account", signup_path
-              - else
-                %li= link_to "Log In", login_path
+/ .site-wrapper
+/   .site-wrapper-inner
+/     .cover-container
+/       .masthead.clearfix
+/         .inner
+/           %h3.masthead-brand
+/             Samuels Tennisport
+/           %nav
+/             %ul.nav.masthead-nav
+/               %li.active
+/                 %a Home
+/               %li
+/                 = link_to "Customers", customers_path
+/               %li
+/                 %a Contact
+/               - if current_user
+/                 %li= link_to "Log Out", logout_path, method: :delete
+/                 - if current_user.admin
+/                   %li= link_to "Create Account", signup_path
+/               - else
+/                 %li= link_to "Log In", login_path
+.container
+  .jumbotron
+    .inner.cover
+      %h1.cover-heading
+        Samuels Tennisport
+        %p.lead
+          This app is designed to manage customers and track their rackets. Customers are alerted whenever a registered racket is due for a string change.
+        %p.lead
+          %a.btn.btn-lg.btn-default Coming Soon!
 
-      .inner.cover
-        %h1.cover-heading
-          Samuels Tennisport
-          %p.lead
-            This app is designed to manage customers and track their rackets. Customers are alerted whenever a registered racket is due for a string change.
-          %p.lead
-            %a.btn.btn-lg.btn-default Coming Soon!
-
-      .mastfoot
-        .inner
-          %p Samuels Tennisport #{Time.new.year} ©
+    .mastfoot
+      .inner
+        %p Samuels Tennisport #{Time.new.year} ©
