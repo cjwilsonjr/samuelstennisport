@@ -27,8 +27,6 @@ module RacketHelper
     if racket.last_string_change
       change_date = racket.last_string_change + (customer.months_between_string_change).months
       racket.update(next_string_change: change_date)
-    else
-      racket.update(next_string_change: 30.days)
     end
   end
 end
