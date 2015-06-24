@@ -21,6 +21,7 @@ class RacketsController < ApplicationController
     if @racket.save
       @racket.update(owner_id: @customer.id)
       # CustomerMailer.customer_email(current_user).deliver_now
+      # CustomerMailer.reminder_email(@customer).delay_for(@customer.next_string_change - 1.day)
       redirect_to @racket
     else
       render "new"
