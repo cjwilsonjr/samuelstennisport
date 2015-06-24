@@ -1,8 +1,17 @@
 class CustomerMailer < ApplicationMailer
 
-  def customer_email(customer)
+  def customer_email(customer, racket)
     @customer = customer
-    @url = "http://samuelstennisport.herokuapp.com/customers"
-    mail(to: @customer.email, subject: "Welcome to the customer page")
+    @racket = racket
+    @stringset = racket.stringsets[-1]
+    @url = "mailto:samuelstennisport@aol.com"
+    mail(to: @customer.email, subject: "#{@racket.brand} Racket String Change Due Date")
+  end
+
+  def reminder_email(customer, racket)
+    @customer = customer
+    @racket = racket
+    @url = "mailto:samuelstennisport@aol.com"
+    mail(to: @customer.email, subject: "Reminder: #{@racket.brand} Racket Needs New Strings")
   end
 end

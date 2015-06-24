@@ -4,11 +4,10 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
   %body
     %h1
-      Welcome to example.com, #{@customer.first_name}
+      Thank you for choosing Samuels Tennisport, #{@customer.first_name}!
     %p
-      You have successfully signed up to example.com,
-      your email is: #{@customer.email}.
-      %br/
+      We have successfully put #{@stringset.brand} #{@stringset.description} strings on your #{@racket.brand} racket.
+      %br
     %p
       To view a list of customers, just follow this link: #{@url}.
     %p Thanks for joining and have a great day!
