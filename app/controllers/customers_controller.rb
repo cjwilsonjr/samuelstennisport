@@ -24,7 +24,7 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.find_by_id(params[:id])
-    @rackets = Racket.all
+    @rackets = @customer.rackets
   end
 
   private
