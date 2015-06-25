@@ -1,4 +1,5 @@
 Rails.application.configure do
+  require 'yaml'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -50,8 +51,8 @@ Rails.application.configure do
     address: 'smtp.gmail.com',
     port: 587,
     domain: 'gmail.com',
-    user_name: "christopher.wilson.jr@gmail.com",
-    password: ENV['PASSWORD'],
+    user_name: Rails.application.secrets.email,
+    password: Rails.application.secrets.password,
     authentication: 'plain',
     enable_starttls_auto: true}
 end
