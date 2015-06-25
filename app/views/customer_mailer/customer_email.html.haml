@@ -8,6 +8,7 @@
     %p
       We have successfully put #{@stringset.brand} #{@stringset.description} strings on your #{@racket.brand} racket.
       %br
+      Based on your weekly rate of play, your strings will be due for a change on #{@racket.next_string_change.strftime("%A, %B %d %Y")}.
     %p
-      To view a list of customers, just follow this link: #{@url}.
-    %p Thanks for joining and have a great day!
+      To contact us please #{link_to "send us an email", @url} or respond to this email.
+    %p Thanks you and have a great day!
