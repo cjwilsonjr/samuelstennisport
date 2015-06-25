@@ -18,7 +18,7 @@ class StringsetsController < ApplicationController
       @stringset.update(racket_id: @racket.id)
       @racket.update(last_string_change: Time.now)
       next_string_change_date(@racket, customer)
-      CustomerMailer.customer_email(current_user, @racket).deliver_now
+      CustomerMailer.customer_email(customer, @racket).deliver_now
       redirect_to @racket
     end
   end
