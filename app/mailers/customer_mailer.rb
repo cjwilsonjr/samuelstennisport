@@ -4,7 +4,7 @@ class CustomerMailer < ApplicationMailer
     @customer = customer
     @racket = racket
     @stringset = racket.stringsets[-1]
-    @url = "mailto:samuelstennisport@aol.com"
+    @url = "mailto:tennisport@aol.com"
     mail(to: @customer.email, subject: "#{@racket.brand} Racket String Change Due Date")
   end
 
