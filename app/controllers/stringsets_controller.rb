@@ -13,11 +13,14 @@ class StringsetsController < ApplicationController
   def create
     @racket = Racket.find_by_id(params[:racket_id])
     customer = @racket.owner
-    @stringset = @racket.stringsets.create(stringset_params)
-    @stringset.update(racket_id: @racket.id)
-    @racket.update(last_string_change: Time.now)
-    next_string_change_date(@racket, customer)
-    redirect_to @racket
+    @stringset = @racket.stringsets.new(stringset_params)
+    if @stringset.save
+      @stringset.update(racket_id: @racket.id)
+      @racket.update(last_string_change: Time.now)
+      next_string_change_date(@racket, customer)
+      CustomerMailer.customer_email(current_user, @racket).deliver_now
+      redirect_to @racket
+    end
   end
 
   private
