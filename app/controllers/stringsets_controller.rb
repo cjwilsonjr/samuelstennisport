@@ -19,7 +19,8 @@ class StringsetsController < ApplicationController
       @racket.update(last_string_change: Time.now)
       next_string_change_date(@racket, customer)
       CustomerMailer.customer_email(customer, @racket).deliver_now
-      CustomerMailer.delay_for(5.seconds).one_week_reminder_email(customer, @racket)
+      CustomerMailer.delay_until(@racket.next_string_change - 1.week).one_week_reminder_email(customer, @racket)
+      CustomerMailer.delay_until(@racket.next_string_change - 1.day).next_day_reminder_email(customer, @racket)
       redirect_to @racket
     end
   end
