@@ -10,7 +10,7 @@ RSpec.describe CustomerMailer, type: :mailer do
     let(:stringset) { Stringset.create!(brand: "Babolat", description: "Flex", racket: racket) }
     it "should deliver an email one week before the next string change date" do
       # @joe = Customer.create!(first_name: "Joe", last_name: "Test", email: "christopher.wilson.jr@gmail.com", play_per_week: 3)
-      CustomerMailer.one_week_reminder_email(customer, racket).deliver_later(wait_until: (racket.next_string_change - 1.week))
+      CustomerMailer.delay_until((racket.next_string_change - 1.week)).one_week_reminder_email(customer, racket)
       ActionMailer::Base.deliveries.count.should == 1
     end
   end
