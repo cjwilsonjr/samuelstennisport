@@ -13,3 +13,4 @@
 /tmp
 
 secrets.yml
+/coverage
