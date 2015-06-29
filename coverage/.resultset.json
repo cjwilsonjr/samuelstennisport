@@ -1,0 +1,77 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/cjwilson/Desktop/samuels_tennisport/app/mailers/customer_mailer.rb": [
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/cjwilson/Desktop/samuels_tennisport/app/mailers/application_mailer.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/cjwilson/Desktop/samuels_tennisport/spec/models/customer_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/cjwilson/Desktop/samuels_tennisport/app/models/customer.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/cjwilson/Desktop/samuels_tennisport/spec/models/stringset_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/cjwilson/Desktop/samuels_tennisport/app/models/stringset.rb": [
+        1,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1435537089
+  }
+}
