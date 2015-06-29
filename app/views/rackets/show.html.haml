@@ -2,4 +2,7 @@
   .jumbotron
     %h2 Add Strings
     = render 'stringsets/form' if @racket.stringsets.empty?
-    = @racket.stringsets[0].brand if @racket.stringsets
+    - if @racket.stringsets
+      %h4 Current Strings:
+      = @racket.stringsets[0].brand
+      / = render 'stringsets/form'
